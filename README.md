@@ -1,5 +1,4 @@
 # Dashboard Proyecto  - Interfaces de Usuario para crear bloques de código   
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 Proyecto Dashboard realizado para el Ciclo 4 de Digital NAO en la certificación como desarrollador FrontEnd.
 
 ## Comenzando 🚀
