@@ -1,36 +1,41 @@
+# Dashboard Proyecto  - Interfaces de Usuario para crear bloques de código   
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Proyecto Dashboard realizado para el Ciclo 4 de Digital NAO en la certificación como desarrollador FrontEnd.
 
-## Getting Started
+## Comenzando 🚀
 
-First, run the development server:
+Para correr el proyecto localmente
+* Clonar el proyecto en tu local
 
+* Instalar las dependencias 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* Correr el proyecto localmente
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+* Abrir [http://localhost:3000](http://localhost:3000) con el browser para ver el resultado
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Screen 📌
+![Imagen del Dashboard](./public/images/screen-dashboard.gif)
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Construido con 🛠️
+* [React](https://react.dev/) Librería utilizada 
+* [NextJs](https://nextjs.org/) - Framework
+* [Tailwind CSS](https://tailwindcss.com/) - CSS Framework
+* [daisyUI](https://daisyui.com/) - Componente Library for Tailwind CSS
+* [Nivo](https://nivo.rocks/) - Componente para crear Charts customizados
+* [React Icons](https://react-icons.github.io/react-icons/) - Iconos  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+
+
