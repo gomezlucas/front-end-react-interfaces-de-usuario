@@ -21,7 +21,7 @@ npm run dev
 
 
 ## Screen 📌
-![Imagen del Dashboard](./public/images/screen-dashboard.gif)
+![Imagen del Dashboard](./public/screen-dashboard.gif)
 
 
 ## Construido con 🛠️
