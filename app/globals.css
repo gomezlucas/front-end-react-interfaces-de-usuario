@@ -33,7 +33,9 @@
   box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.3); /* Add the box shadow effect */
 
 }
-
+a:active{
+  background-color: white!important;
+ }
 
 @layer utilities {
   .text-balance {
