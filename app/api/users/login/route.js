@@ -1,5 +1,5 @@
 function findUserByEmail(users, email) {
-  return users.some((user) => user.user.email === email);
+  return users.find((user) => user.user.email === email);
 }
 
 
@@ -7,12 +7,19 @@ export async function GET(req ) {
     try {
       const params = req.nextUrl.searchParams
       const emailUser = params.get("email");
+      const passwordUser = params.get("password");
 
        const res = await fetch('http://localhost:8000/users');
        const users = await res.json();    
+       console.log(users)
        const userExists = findUserByEmail(users,emailUser)
-         
-      return new Response(JSON.stringify({userExists}), { status: 200 });
+      
+       console.log(userExists.user.password,passwordUser)
+       if (!userExists || userExists.user.password !== passwordUser ){
+        return new Response(JSON.stringify({error: "Usuario/Password inexistente"}), { status: 200 });
+       }
+        return new Response(JSON.stringify({userExists}), { status: 200 });
+      
     } catch (error) {
       return new Response(JSON.stringify({ error: 'Failed to fetch users' }), { status: 500 }); // Handle errors with proper status code
     }

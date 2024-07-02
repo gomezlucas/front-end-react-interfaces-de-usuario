@@ -1,8 +1,8 @@
 "use client";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 //import { authService } from './authService';
 import { useEffect, useLayoutEffect, useState } from "react";
-import { loginSuccess, logoutSuccess } from "../lib/features/auth/authSlice";
+import { loginSuccess } from "../lib/features/auth/authSlice";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useRouter } from 'next/navigation'
@@ -11,6 +11,7 @@ const SignUp = () => {
   const dispatch = useDispatch();
   const router = useRouter()
   const [users, setUsers] = useState([]);
+  const [backError, setBackError] = useState(false);
 
   const { handleSubmit, errors, touched, getFieldProps } = useFormik({
     initialValues: {
@@ -31,10 +32,19 @@ const SignUp = () => {
       .required('Reingrese su contraseña.')
       .oneOf([Yup.ref('password')], 'Las contraseñas no coinciden')
     }),
-    onSubmit: (values) => {
-      dispatch(loginSuccess(values))
-      console.log(values)
-      console.log(errors);
+    onSubmit: async(values) => {
+      const {userExists} = await findUser(values)
+            console.log(userExists)
+      if (userExists) {
+        console.error("Email already exists!");        
+        setBackError(true)
+        setTimeout(() => {
+          setBackError(false)
+
+        }, 2000);
+        return;
+      }
+      dispatch(loginSuccess(values))   
       postData(values)
       router.push('/dashboard/main')
     },
@@ -51,6 +61,17 @@ const SignUp = () => {
     } catch (error) {
       console.error(error);
     }
+  }
+
+  const findUser = async(user) => {
+      try {
+        const response = await fetch(`/api/users?email=${user.email}`); 
+        const data = await response.json();
+        return data
+      } catch (error) {
+        console.error(error);
+
+      }
   }
 /*
 useEffect(() => {
@@ -73,6 +94,7 @@ useEffect(() => {
         <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
           <div className="bg-white px-6 py-8 rounded shadow-md text-blue-950 w-full">
             <h1 className="mb-8 text-3xl text-center">Registrarse</h1>
+          
             <form noValidate onSubmit={handleSubmit}>
               <div className="mb-4">
                 <input
@@ -89,6 +111,7 @@ useEffect(() => {
                 {touched.name && errors.name && (
                   <span className="text-red-500">{errors.name}</span>
                 )}
+                
               </div>
               <div className="mb-4">
                 <input
@@ -96,6 +119,9 @@ useEffect(() => {
                   className={`block border border-grey-light w-full p-3 rounded  ${
                     touched.email &&
                     errors.email &&
+                    "border-solid border-1 border-red-500"
+                  } ${
+                    backError &&                    
                     "border-solid border-1 border-red-500"
                   }`}
                   name="enail"
@@ -105,6 +131,10 @@ useEffect(() => {
                 {touched.email && errors.email && (
                   <span className="text-red-500">{errors.email}</span>
                 )}
+                  {
+              backError &&
+              <span className="text-red-500 mb-5">Usuario ya registrado!</span>
+            }
               </div>
               <div className="mb-4">
 

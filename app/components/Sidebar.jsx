@@ -1,6 +1,8 @@
 "use client";
 import Link from "next/link";
 import React from "react";
+import { useDispatch } from "react-redux";
+
 import { MdDashboard } from "react-icons/md";
 import { IoMdCart } from "react-icons/io";
 import { FaBagShopping } from "react-icons/fa6";
@@ -9,16 +11,23 @@ import { MdCreditCard } from "react-icons/md";
 import { IoMdSettings } from "react-icons/io";
 import { FaPowerOff } from "react-icons/fa6";
 import { usePathname } from 'next/navigation';
+import { logoutSuccess } from "../lib/features/auth/authSlice";
+import { useRouter } from 'next/navigation'
 
-
-function Sidebar({ children }) {
+function Sidebar() {
+  const dispatch = useDispatch();
   const pathname = usePathname();
-console.log("the routeee", pathname)
+  const router = useRouter()
+
+
+  const handleLogout = async () => {   
+       dispatch(logoutSuccess());  
+  };
   return (
     <>
-        <div className="fixed  w-1/5   md:w-2/12 	 h-screen p-2 md:p-4 md:pt-10   flex-col justify-between pt-10 ">
+        <div className="fixed  w-1/5   md:w-2/12 	 h-screen p-2 md:p-4 md:pt-10   flex-col justify-between pt-10 z-40">
           <div className="flex justify-center">
-            <Link href="/" >
+            <Link href="/login" onClick={handleLogout}>
               <div className="  cursor-pointer my-2  rounded-lg inline-block flex  items-center">
                 <FaPowerOff className="text-3xl md:text-5xl	"  />
               </div>

@@ -6,7 +6,7 @@ import BarChartsNovo from "../../components/BarChartsNovo";
 import MapChartNovo from "../../components/MapChartNovo";
 import PieChart from "../../components/PieChart";
 import LineChart from "../../components/LineChart"
-import RecentOrders from "../../components/RecentOrders.jsx";
+import RecentSales from "../../components/RecentSales";
 
 import { data } from "../../data/dataNovo.js";
 import { dataMap } from "../../data/mapaNovo.js";
@@ -28,7 +28,7 @@ export default function Page() {
           <p className="text-base pl-4 "> Total   Clientes </p>
           <BarChartsNovo data={data} />
         </div>
-        <RecentOrders />
+        <RecentSales />
       </div>
       <div className="p-4 grid md:grid-cols-4 grid-cols-1 gap-4 w-full 	 ml-auto">
       <div className=" md:col-span-2 lg:h-[70vh] h-[50vh] pt-10">

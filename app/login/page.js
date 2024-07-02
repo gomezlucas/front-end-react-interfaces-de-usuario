@@ -10,10 +10,12 @@ import { useRouter } from 'next/navigation'
 const SignUp = () => {
   const dispatch = useDispatch();
   const router = useRouter()
+  const [backError, setBackError] = useState(false);
+
   const { handleSubmit, errors, touched, getFieldProps } = useFormik({
     initialValues: {
-       email: "test1@gmail.com",
-      password: "123456"
+       email: "",
+      password: ""
      },
     validationSchema: Yup.object({
       email: Yup.string()
@@ -22,20 +24,36 @@ const SignUp = () => {
       password: Yup.string().required("Ingrese la contraseña"),
 
     }),
-    onSubmit: (values) => {
-      dispatch(loginSuccess(values))
-      /* Se agrega condición a fines de ejemplo del prototipo*/ 
-      if (values.email === "test1@gmail.com" && password === "123456"){
-        console.log(values)
-        console.log(errors);
-        router.push('/dashboard/main')
-      }else{
-
+    onSubmit: async (values) => {
+    const user =   await loginUser(values)
+      console.log("a ver ", user)
+      if (user.error){
+        setBackError(true)
+        setTimeout(() => {
+          setBackError(false)
+        }, 3000);
+        return
       }
+
+      dispatch(loginSuccess(values))
+      router.push('/dashboard/main')
+    
       
     },
   });
   
+  const loginUser = async(user) => {
+    try {
+      const response = await fetch(`/api/users/login?email=${user.email}&password=${user.password}`); 
+      const data = await response.json();
+      return data
+    } catch (error) {
+      console.error(error);
+    }
+}
+
+
+
   return (
     <div>
       <div className="bg-grey-lighter min-h-screen flex flex-col">
@@ -51,8 +69,11 @@ const SignUp = () => {
                     touched.email &&
                     errors.email &&
                     "border-solid border-1 border-red-500"
+                  } ${
+                    backError &&                    
+                    "border-solid border-1 border-red-500"
                   }`}
-                  name="enail"
+                  name="email"
                   placeholder="Email"
                   {...getFieldProps("email")}
                 />
@@ -68,7 +89,11 @@ const SignUp = () => {
                   touched.password &&
                   errors.password &&
                   "border-solid border-1 border-red-500"
-                }`}
+                } ${
+                  backError &&                    
+                  "border-solid border-1 border-red-500"
+                }`              
+              }
                 name="password"
                 placeholder="Contraseña"
                 {...getFieldProps("password")}
@@ -77,7 +102,10 @@ const SignUp = () => {
                 {touched.password && errors.password && (
                   <span className="text-red-500">{errors.password}</span>
                 )}
-              </div>
+         {
+              backError &&
+              <span className="text-red-500 mb-5"> Usuario/Password inexistente </span>
+            }              </div>
             
               <button
                 type="submit"

@@ -1,9 +1,25 @@
-import React from 'react';
+"use client"
+import React, {useState, useEffect} from 'react';
 import { FaShoppingBag } from 'react-icons/fa';
 import { BsThreeDotsVertical } from 'react-icons/bs';
-import { data } from '../../data/data.js';
 
 const orders = () => {
+  const [sales, setSales ] = useState([])
+
+  useEffect(() => {
+    const fetchSales = async () => {
+      try {
+        const res = await fetch('/api/sales');
+        const data = await res.json();
+        setSales(data.sales);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+  
+    fetchSales();
+  }, []);
+
   return (
     <div className='bg-gray-100 min-h-screen'>
       <div className='flex justify-between px-4 pt-4'>        
@@ -18,7 +34,7 @@ const orders = () => {
             <span className='hidden sm:grid'>Method</span>
           </div>
           <ul>
-            {data.map((order, id) => (
+            {sales.map((order, id) => (
               <li
                 key={id}
                 className='bg-gray-50 hover:bg-gray-100 rounded-lg my-3 p-2 grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 items-center justify-between cursor-pointer'
