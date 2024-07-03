@@ -11,10 +11,8 @@ export async function GET(req ) {
 
        const res = await fetch('http://localhost:8000/users');
        const users = await res.json();    
-       console.log(users)
        const userExists = findUserByEmail(users,emailUser)
       
-       console.log(userExists.user.password,passwordUser)
        if (!userExists || userExists.user.password !== passwordUser ){
         return new Response(JSON.stringify({error: "Usuario/Password inexistente"}), { status: 200 });
        }

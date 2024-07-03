@@ -1,6 +1,5 @@
 "use client";
 import { useDispatch, useSelector } from "react-redux";
-//import { authService } from './authService';
 import { useState } from "react";
 import { loginSuccess, logoutSuccess } from "../lib/features/auth/authSlice";
 import { useFormik } from "formik";
@@ -26,7 +25,6 @@ const SignUp = () => {
     }),
     onSubmit: async (values) => {
     const user =   await loginUser(values)
-      console.log("a ver ", user)
       if (user.error){
         setBackError(true)
         setTimeout(() => {
@@ -34,7 +32,6 @@ const SignUp = () => {
         }, 3000);
         return
       }
-
       dispatch(loginSuccess(values))
       router.push('/dashboard/main')
     

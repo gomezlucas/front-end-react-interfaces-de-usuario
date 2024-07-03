@@ -34,7 +34,6 @@ const SignUp = () => {
     }),
     onSubmit: async(values) => {
       const {userExists} = await findUser(values)
-            console.log(userExists)
       if (userExists) {
         console.error("Email already exists!");        
         setBackError(true)

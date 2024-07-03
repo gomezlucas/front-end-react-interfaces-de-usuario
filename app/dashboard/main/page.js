@@ -12,11 +12,9 @@ import { data } from "../../data/dataNovo.js";
 import { dataMap } from "../../data/mapaNovo.js";
 import { pieData } from "../../data/pieData.js";
 import {lineData } from "../../data/lineData.js"
-import {Counter} from "../../lib/features/counter/Counter"
 
 
 export default function Page() {
-  console.log(dataMap);
 
   return (
     <>
@@ -44,7 +42,6 @@ export default function Page() {
           <MapChartNovo data={dataMap} />
         </div>
       </div>
-      <Counter/>
     </>
   );
 }

@@ -1,87 +1,18 @@
 {
   "users": [
     {
-      "id": "17fe",
+      "id": "4d99",
       "user": {
-        "name": "Screen Dashboard",
-        "email": "sdfasd@gmail.com",
-        "password": "123",
-        "confirmPassword": "123"
-      }
-    },
-    {
-      "id": "3989",
-      "user": {
-        "name": "Lucas ",
-        "email": "gomez.@gmail.com",
+        "name": "Test",
+        "email": "test@gmail.com",
         "password": "123456",
         "confirmPassword": "123456"
-      }
-    },
-    {
-      "id": "b246",
-      "user": {
-        "name": "Lucas 2222",
-        "email": "gomez.@gmail.com",
-        "password": "123456",
-        "confirmPassword": "123456"
-      }
-    },
-    {
-      "id": "38d7",
-      "user": {
-        "name": "Lucas 2222",
-        "email": "gomez.@gmail.com",
-        "password": "123456",
-        "confirmPassword": "123456"
-      }
-    },
-    {
-      "id": "6558",
-      "user": {
-        "name": "Lucas 2222",
-        "email": "gomez.@gmail.com",
-        "password": "123456",
-        "confirmPassword": "123456"
-      }
-    },
-    {
-      "id": "5ed0",
-      "user": {
-        "id": "holis"
-      }
-    },
-    {
-      "id": "ad5c",
-      "user": {
-        "id": "holis"
-      }
-    },
-    {
-      "id": "717d",
-      "user": {
-        "id": "holis"
-      }
-    },
-    {
-      "id": "8440",
-      "user": {
-        "id": "holis"
-      }
-    },
-    {
-      "id": "efcb",
-      "user": {
-        "name": "Screen Dashboard",
-        "email": "asdf@gmail.com",
-        "password": "123",
-        "confirmPassword": "123"
       }
     }
   ],
   "sales": [
     {
-      "id": 1,
+      "id": "1",
       "name": {
         "first": "John",
         "last": "Smith"
@@ -92,7 +23,7 @@
       "date": "15 Minutes ago"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": {
         "first": "Chris",
         "last": "Adams"
@@ -103,7 +34,7 @@
       "date": "23 Minutes ago"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": {
         "first": "Sarah",
         "last": "Smith"
@@ -114,7 +45,7 @@
       "date": "1 Hour ago"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": {
         "first": "Joseph",
         "last": "Choo"
@@ -125,7 +56,7 @@
       "date": "1 Hour ago"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": {
         "first": "Steve",
         "last": "Harding"
@@ -136,7 +67,7 @@
       "date": "2 Hour ago"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": {
         "first": "Laura",
         "last": "Croft"
@@ -147,7 +78,7 @@
       "date": "3 Hour ago"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": {
         "first": "Michael",
         "last": "Jones"
@@ -158,7 +89,7 @@
       "date": "3 Hour ago"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": {
         "first": "James",
         "last": "Bond"
@@ -169,7 +100,7 @@
       "date": "7 Hour ago"
     },
     {
-      "id": 9,
+      "id": "9",
       "name": {
         "first": "Haley",
         "last": "Whiting"
@@ -180,7 +111,7 @@
       "date": "1 Day ago"
     },
     {
-      "id": 10,
+      "id": "10",
       "name": {
         "first": "Tim",
         "last": "Thomas"

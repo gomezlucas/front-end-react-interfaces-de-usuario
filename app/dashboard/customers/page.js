@@ -1,7 +1,6 @@
 import React from 'react';
 import { BsPersonFill, BsThreeDotsVertical } from 'react-icons/bs';
 import { data } from '../../data/data.js';
-
 const customers = () => {
   return (
     <div className='bg-gray-100 min-h-screen'>

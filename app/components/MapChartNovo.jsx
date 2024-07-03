@@ -4,7 +4,6 @@ import {features} from "../data/world_countries.js"
  
 
 const MapChartNovo = ({ data }) => {
-    console.log(features)
     
     return(
     
