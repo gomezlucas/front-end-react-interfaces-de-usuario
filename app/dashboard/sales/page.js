@@ -4,7 +4,7 @@ import { FaShoppingBag } from 'react-icons/fa';
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import HeaderSales from './HeaderSales';
 
-const orders = () => {
+const Orders = () => {
   const [sales, setSales ] = useState([])
 
   useEffect(() => {
@@ -77,4 +77,4 @@ const orders = () => {
   );
 };
 
-export default orders;
+export default Orders;
