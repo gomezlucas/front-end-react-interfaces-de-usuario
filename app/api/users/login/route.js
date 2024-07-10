@@ -9,7 +9,7 @@ export async function GET(req ) {
       const emailUser = params.get("email");
       const passwordUser = params.get("password");
 
-       const res = await fetch('http://localhost:8000/users');
+       const res = await fetch('https://user-interfaces-back.glitch.me/users');
        const users = await res.json();    
        const userExists = findUserByEmail(users,emailUser)
       
@@ -27,7 +27,7 @@ export async function GET(req ) {
   export async function POST(req) {
     try {
       const {user} = await req.json();        
-      const response = await fetch('http://localhost:8000/users', {
+      const response = await fetch('https://user-interfaces-back.glitch.me/users', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({  user }),

@@ -1,6 +1,6 @@
 export async function GET() {
     try {
-      const res = await fetch('http://localhost:8000/sales');
+      const res = await fetch('https://user-interfaces-back.glitch.me/sales');
       const sales = await res.json();    
       return new Response(JSON.stringify({ sales }), { status: 200 });
     } catch (error) {
