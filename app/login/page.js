@@ -61,6 +61,7 @@ const SignUp = () => {
           
               <div className="mb-4">
                 <input
+                  data-testid="email"
                   type="text"
                   className={`block border border-grey-light w-full p-3 rounded  ${
                     touched.email &&
@@ -82,6 +83,7 @@ const SignUp = () => {
 
               <input
                 type="password"
+                data-testid="password"
                  className={`block border border-grey-light w-full p-3 rounded  ${
                   touched.password &&
                   errors.password &&
@@ -105,6 +107,7 @@ const SignUp = () => {
             }              </div>
             
               <button
+                data-testid="submit-button"
                 type="submit"
                 className="w-full text-center py-3 rounded bg-blue-950 text-white hover:bg-blue-900 focus:outline-none my-1"
               >

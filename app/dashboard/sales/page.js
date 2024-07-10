@@ -2,6 +2,7 @@
 import React, {useState, useEffect} from 'react';
 import { FaShoppingBag } from 'react-icons/fa';
 import { BsThreeDotsVertical } from 'react-icons/bs';
+import HeaderSales from './HeaderSales';
 
 const orders = () => {
   const [sales, setSales ] = useState([])
@@ -22,9 +23,7 @@ const orders = () => {
 
   return (
     <div className='bg-gray-100 min-h-screen'>
-      <div className='flex justify-between px-4 pt-4'>        
-        <p className="text-4xl font-bold">Ventas</p>                
-      </div>
+      <HeaderSales  numberOfSales="5"/>
       <div className='p-4'>
         <div className='w-full m-auto p-4 border rounded-lg bg-white overflow-y-auto'>
           <div className='my-3 p-2 grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 items-center justify-between cursor-pointer'>
@@ -37,6 +36,7 @@ const orders = () => {
             {sales.map((order, id) => (
               <li
                 key={id}
+                data-testid={`sale-item-${id}`}
                 className='bg-gray-50 hover:bg-gray-100 rounded-lg my-3 p-2 grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 items-center justify-between cursor-pointer'
               >
                 <div className='flex'>

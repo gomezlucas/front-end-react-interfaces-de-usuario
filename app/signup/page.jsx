@@ -98,6 +98,7 @@ useEffect(() => {
               <div className="mb-4">
                 <input
                   type="text"
+                  data-testid="name"
                   className={`block border border-grey-light w-full p-3 rounded  ${
                     touched.name &&
                     errors.name &&
@@ -115,6 +116,7 @@ useEffect(() => {
               <div className="mb-4">
                 <input
                   type="text"
+                  data-testid="email"
                   className={`block border border-grey-light w-full p-3 rounded  ${
                     touched.email &&
                     errors.email &&
@@ -139,6 +141,7 @@ useEffect(() => {
 
               <input
                 type="password"
+                data-testid="password"
                  className={`block border border-grey-light w-full p-3 rounded  ${
                   touched.password &&
                   errors.password &&
@@ -157,6 +160,7 @@ useEffect(() => {
 
               <input
                 type="password"
+                data-testid="confirm-password"
                 className={`block border border-grey-light w-full p-3 rounded  ${
                   touched.confirmPassword &&
                   errors.confirmPassword &&
@@ -174,6 +178,7 @@ useEffect(() => {
 
               <button
                 type="submit"
+                data-testid="submit-button"
                 className="w-full text-center py-3 rounded bg-blue-950 text-white hover:bg-blue-900 focus:outline-none my-1"
               >
                 Crear cuenta

@@ -45,7 +45,7 @@ function Sidebar() {
            
             </li>
             <li className="group py-2 px-0.5 md:p-2">
-              <Link href="/dashboard/sales" className={`hover:bg-white bg-white justify-center lg:justify-start  mt-2 
+              <Link data-testid="ventas" href="/dashboard/sales" className={`hover:bg-white bg-white justify-center lg:justify-start  mt-2 
               ${pathname ==  "/dashboard/sales" && "active-box"}`}>
                 <div className="  cursor-pointer my-2  rounded-lg inline-block flex  items-center">
                   <IoMdCart className={`text-blue-300	group-hover:text-blue-950  ${pathname ==  "/dashboard/sales" && "active-link"}`} size={20} />

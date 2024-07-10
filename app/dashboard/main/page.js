@@ -18,7 +18,7 @@ export default function Page() {
 
   return (
     <>
-      <HeroText />
+      <HeroText title="Total Revenue" />
 
       <div className="p-4 grid md:grid-cols-3 grid-cols-1 gap-4 w-full 	 ml-auto">
         <TopCards />

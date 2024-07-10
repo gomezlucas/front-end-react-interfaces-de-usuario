@@ -3,10 +3,10 @@ import Image from "next/image";
 import { BiSolidUpArrow } from "react-icons/bi";
 import { BiSolidDownArrow } from "react-icons/bi";
 
-const HeroText = () => {
+const HeroText = ({title}) => {
   return (
     <div className="flex  w-full justify-between px-8  pt-8 flex-col">
-      <p className="text-base "> Total Revenue </p>
+      <p className="text-base "> {title} </p>
       <div className="flex pt-2 items-start md:items-center gap-4 flex-col md:flex-row">
         <p className="text-4xl font-bold">$ 45,365.00</p>
 

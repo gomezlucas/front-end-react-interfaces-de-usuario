@@ -34,6 +34,7 @@ const RecentOrders = () => {
         {sales.map((order, id) => (
           <li
             key={id}
+            data-testid={`sale-item-${id}`}
             className='bg-gray-50 hover:bg-gray-100 rounded-lg my-3 p-2 flex items-center cursor-pointer'
           >
             <div className='bg-blue-100 rounded-lg p-3'>
